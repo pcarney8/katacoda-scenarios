@@ -1,3 +1,16 @@
+Now we need the our Openshift-Applier role from GitHub, let's create the `requirements.yml` file
+
+```
+cat <<EOM >requirements.yml
+- name: openshift-applier
+    scm: git
+    src: https://github.com/redhat-cop/openshift-applier
+    version: v2.0.0
+EOM
+```{{execute}}
+
+In the next step we'll start populating the inventory.
+
 For this tutorial, we are going to use an existing Ruby template. In many cases you may want your own custom template, but the process is the same.
 
 First you'll need to find the name of the template you want to pull in:

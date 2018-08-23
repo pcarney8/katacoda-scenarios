@@ -1,0 +1,7 @@
+roles/*
+!roles/configure-nexus
+*.pyc
+.idea
+*.iml
+gdsl
+*.retry
