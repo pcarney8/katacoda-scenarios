@@ -6,6 +6,7 @@ Here we'll use a separate inventory with a different `openshift_cluster_content`
 cat <<EOM >inventory/host_vars/bootstrap.yml
 ---
 ansible_connection: local
+
 openshift_cluster_content:
 - object: projects
     content:
