@@ -22,8 +22,8 @@ Then start the run:
 If that is successful you should she:
 
 ```
-PLAY RECAP ********************************************************************************************************************************
-application                : ok=17   changed=1    unreachable=0    failed=0
-bootstrap                  : ok=14   changed=1    unreachable=0    failed=0
+PLAY RECAP ***********************************
+application                : ok=17   changed=1
+bootstrap                  : ok=14   changed=1
 ```
 
