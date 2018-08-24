@@ -1,37 +1,26 @@
-Before we can run this, we need to create a playbook which will call the OpenShift-Applier.
+Now we'll use the `openshift-applier` role to run the same `oc process` command, but piped into `oc apply`
+
+Essentially: `oc process -f templates/app/ruby.yml --param-file params/ruby/build | oc apply -f -`
+
+This is a powerful command that will ensure your template has all the necessary pieces in OpenShift
+
+To get our current template to work with the `openshift-applier` we need to create the `openshift_cluster_content` to tell it to create OpenShift objects from the template and parameters.
+
+You can learn more details about this [here](https://github.com/redhat-cop/openshift-applier/blob/master/roles/openshift-applier/README.md).
 
 ```
-cat <<EOM >apply.yml
+cat <<EOM >inventory/host_vars/application.yml
 ---
-- name: Deploy {{ target }} 
-    hosts: "{{ target }}"
-    vars:
-      ruby_namespace: "ruby-example"
-    tasks:
-      - include_role:
-          name: openshift-applier/roles/openshift-applier
+ansible_connection: local
+
+openshift_cluster_content:
+- object: ruby-components
+    content:
+    - name: ruby-ex
+      template: "{{ playbook_dir }}/templates/app/ruby.yml"
+      params: "{{ playbook_dir }}/params/ruby/build"
+      namespace: "{{ ruby_namespace }}"
+      tags:
+      - app
 EOM
 ```{{execute}}
-
-You can see this `{{ target }}` variable being called here. It's purpose is to allow you to run specific portions of the inventory if you want. 
-
-Now we are ready to run!
-
-First pull down the ansible-galaxy requirements into the `roles` directory:
-
-``ansible-galaxy install -r requirements.yml -p roles``{{execute}}
-
-Then start the run:
-
-``ansible-playbook -i inventory apply.yml -e "target=bootstrap,application"``{{execute}}
-
-Once the Ansible run completes, go over to the `Dashboard` tab in this environment. Login with the credentials: 
-
-```
-user: developer
-pass: developer
-```
-
-You should see the `Ruby Example` project. Click on that and you should see the application you just deployed.
-
-Once the deployment is completed, you can go to the route url seen above the ruby-ex service and see the live application.

@@ -1,9 +1,9 @@
 {
     "icon": "fa-openshift",
-    "title": "Intro to OpenShift-Applier",
-    "description": "",
-    "difficulty": "beginner",
-    "time": "10-15 minutes",
+    "title": "Introduction to OpenShift-Applier",
+    "description": "Using the Ansible openshift-applier role to implement the Infrastructure-as-Code paradigm",
+    "difficulty": "Intermediate",
+    "time": "20-30 minutes",
     "backend": {
         "trainingid": "openshift-3-9",
         "imageid": "openshift",
@@ -32,6 +32,15 @@
         }, {
             "title": "Step 5",
             "text": "step5.md"
+        }, {
+            "title": "Step 6",
+            "text": "step6.md"
+        }, {
+            "title": "Step 7",
+            "text": "step7.md"
+        }, {
+            "title": "Step 8",
+            "text": "step8.md"
         }],
         "intro": {
             "courseData": "env-init.sh",
