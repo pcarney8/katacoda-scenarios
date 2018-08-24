@@ -30,7 +30,4 @@ Now push your work up to a branch with your name on it
 git push -u origin your-branch-name
 ```
 
-
-TODO: ONE LAST THING, GET THEM TO PULL IN THE MASTER PLAYBOOK SO IT WILL RUN ON TOWER
-
 And now let's watch it come up in the other cluster!

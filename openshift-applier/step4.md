@@ -1,6 +1,6 @@
 We also need to create the OpenShift project/namespace where the application will run.
 
-Here we'll use a separate inventory with a different `openshift_cluster_content` variable, notice that this template is coming from a url!
+Here we'll use a separate inventory with a different `openshift_cluster_content` variable, notice that this template is coming from a [URL](https://github.com/redhat-cop/openshift-applier/blob/v1.0.2/roles/openshift-applier/README.md)!
 
 ```
 cat <<EOM >inventory/host_vars/bootstrap.yml

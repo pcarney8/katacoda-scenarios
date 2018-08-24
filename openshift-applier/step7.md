@@ -11,7 +11,7 @@ cat <<EOM >requirements.yml
 EOM
 ```{{execute}}
 
-First pull down the ansible-galaxy requirements into the `roles` directory:
+First pull down the `openshift-applier` role from the ansible-galaxy requirements into the `roles` directory:
 
 ``ansible-galaxy install -r requirements.yml -p roles``{{execute}}
 
@@ -21,7 +21,7 @@ Then start the run:
 
 Notice that we've used two values for the variable `target`, they pull in our `openshift-applier` variables for each and then run through our Infra-as-Code
 
-If that is successful you should she:
+If that is successful you should be:
 
 ```
 PLAY RECAP ***********************************
