@@ -1,4 +1,4 @@
-####Now that we see our Ruby app up and running, let's go push it up to GitHub so it can be transferred to our other cluster!
+Now that we see our Ruby app up and running, let's go push it up to GitHub so it can be transferred to our other cluster!
 
 ```
 git init
@@ -33,4 +33,4 @@ git push -u origin your-branch-name
 
 TODO: ONE LAST THING, GET THEM TO PULL IN THE MASTER PLAYBOOK SO IT WILL RUN ON TOWER
 
-###And now let's watch it come up in the other cluster!
+And now let's watch it come up in the other cluster!

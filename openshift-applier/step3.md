@@ -1,4 +1,4 @@
-##Now we'll use the `openshift-applier` role to run the same `oc process` command, but piped into `oc apply`
+Now we'll use the `openshift-applier` role to run the same `oc process` command, but piped into `oc apply`
 
 Essentially: `oc process -f templates/app/ruby.yml --param-file params/ruby/build | oc apply -f -`
 

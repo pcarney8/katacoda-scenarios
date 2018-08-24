@@ -1,4 +1,4 @@
-####Now we need the our Openshift-Applier role from GitHub, let's create the `requirements.yml` file
+Now we need the our Openshift-Applier role from GitHub, let's create the `requirements.yml` file
 
 https://github.com/redhat-cop/openshift-applier
 
@@ -11,11 +11,11 @@ cat <<EOM >requirements.yml
 EOM
 ```{{execute}}
 
-####First pull down the ansible-galaxy requirements into the `roles` directory:
+First pull down the ansible-galaxy requirements into the `roles` directory:
 
 ``ansible-galaxy install -r requirements.yml -p roles``{{execute}}
 
-####Then start the run:
+Then start the run:
 
 ``ansible-playbook -i inventory apply.yml -e "target=bootstrap,application"``{{execute}}
 

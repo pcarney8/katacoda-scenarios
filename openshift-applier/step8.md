@@ -1,4 +1,4 @@
-####Once the Ansible run completes, go over to the `Dashboard` tab in this environment
+Once the Ansible run completes, go over to the `Dashboard` tab in this environment
 
 Login with the credentials: 
 
@@ -11,4 +11,4 @@ You should see the `Ruby Example` project. Click on that and you should see the 
 
 Once the deployment is completed, you can go to the route url seen above the ruby-ex service and see the live application.
 
-###Now let's push it across an Air Gap!
+Now let's push it across an Air Gap!

@@ -1,12 +1,12 @@
-###To get started, let us login to the OpenShift cluster by running the following:
+To get started, let us login to the OpenShift cluster by running the following:
 
 ``oc login -u developer -p developer``{{execute}}
 
-####To begin, let's create a new directory and go into it.
+To begin, let's create a new directory and go into it.
 
 ``mkdir sample-applier; cd sample-applier``{{execute}}
 
-####To complete the generic project structure, we want to create the rest of these:
+To complete the generic project structure, we want to create the rest of these:
 
 ```
 .
@@ -26,13 +26,13 @@
     └── apps
 ```
 
-####Let's go ahead and create that structure:
+Let's go ahead and create that structure:
 
 ```
 mkdir -p inventory/{group_vars,host_vars} params/{ruby,projectrequests} templates/app
 ```{{execute}}
 
-####And now the files:
+And now the files:
 
 ``` 
 touch inventory/group_vars/all.yml inventory/host_vars/{application.yml,bootstrap.yml} inventory/hosts requirements.yml

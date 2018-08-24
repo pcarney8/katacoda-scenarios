@@ -1,4 +1,4 @@
-####We also need to create the OpenShift project/namespace where the application will run.
+We also need to create the OpenShift project/namespace where the application will run.
 
 Here we'll use a separate inventory with a different `openshift_cluster_content` variable, notice that this template is coming from a url!
 
@@ -20,7 +20,7 @@ openshift_cluster_content:
 EOM
 ```{{execute}}
 
-####And now we'll create the parameters for this template:
+And now we'll create the parameters for this template:
 
 ```
 cat <<EOM >params/projectrequests/project
