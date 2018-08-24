@@ -1,4 +1,4 @@
-To finish up the inventory, we need to update the hosts file to include the host_vars we just created.
+####To finish up the inventory, we need to update the hosts file to include the host_vars we just created.
 
 ```
 cat <<EOM >inventory/hosts

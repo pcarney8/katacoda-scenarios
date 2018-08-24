@@ -1,6 +1,8 @@
-For this tutorial, we are going to use an existing Ruby template. In many cases you may want your own custom template, but the process is the same.
+###For this tutorial, we are going to use an existing Ruby OpenShift Template. 
 
-First you'll need to find the name of the template you want to pull in:
+In many cases you may want your own custom template, but the process is the same.
+
+####First you'll need to find the name of the template you want to pull in:
 
 ``oc get templates -n openshift``{{execute}}
 
@@ -10,27 +12,24 @@ NAME                    DESCRIPTION   PARAMETERS    OBJECTS
 ruby-example-template                 1 (1 blank)   6
 ```
 
-`ruby-example-template` is the name of the template we're going to pull down as a template file into the `templates` directory.
+####`ruby-example-template` is the name of the template we're going to pull down as a template file into the `templates` directory.
 
 ```
 oc export template ruby-example-template -n openshift -o yaml > templates/app/ruby.yml
 ```{{execute}}
 
-To checkout what the template looks like, run the following:
+####To checkout what the template looks like, run the following:
 
 ``cat templates/app/ruby.yml``{{execute}}
 
-You'll notice at the end of the template, there is a parameters section with only parameter: `BUILD_NAMESPACE`. We'll want to create a parameter file to set this value.
+There are parameters that match up with the Template to then create a list of OpenShift objects
+
+Our `ruby-example-template` only has one parameter: `BUILD_NAMESPACE`. 
+
+####Let's create a parameter file to set this value:
 
 ```
 echo 'BUILD_NAMESPACE=ruby-example' > params/ruby/build
-```{{execute}}
-
-
-Let's verify the parameters and the template match up (THIS DOESN'T WORK BECAUSE DEVELOPER USER IN THE 
-
-```
-oc process -f templates/app/ruby.yml --param-file params/ruby/build
 ```{{execute}}
 
 In the next step we'll start populating the inventory.

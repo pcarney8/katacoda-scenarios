@@ -1,4 +1,4 @@
-Now we need the our Openshift-Applier role from GitHub, let's create the `requirements.yml` file
+####Now we need the our Openshift-Applier role from GitHub, let's create the `requirements.yml` file
 
 https://github.com/redhat-cop/openshift-applier
 
@@ -7,17 +7,19 @@ cat <<EOM >requirements.yml
 - name: openshift-applier
     scm: git
     src: https://github.com/redhat-cop/openshift-applier
-    version: v3.9.0
+    version: v2.0.0
 EOM
 ```{{execute}}
 
-First pull down the ansible-galaxy requirements into the `roles` directory:
+####First pull down the ansible-galaxy requirements into the `roles` directory:
 
 ``ansible-galaxy install -r requirements.yml -p roles``{{execute}}
 
-Then start the run:
+####Then start the run:
 
 ``ansible-playbook -i inventory apply.yml -e "target=bootstrap,application"``{{execute}}
+
+Notice that we've used two values for the variable `target`, they pull in our `openshift-applier` variables for each and then run through our Infra-as-Code
 
 If that is successful you should she:
 
