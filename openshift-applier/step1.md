@@ -27,6 +27,6 @@ To complete the generic project structure, we want to create the rest of these:
 ```
 
 ```
-mkdir -p inventory/{group_vars,host_vars} params/{ruby,projectrequests} templates/apps 
+mkdir -p inventory/{group_vars,host_vars} params/{ruby,projectrequests} templates/app 
 touch inventory/group_vars/all.yml inventory/host_vars/{application.yml,bootstrap.yml} inventory/hosts requirements.yml
 ```{{execute}}

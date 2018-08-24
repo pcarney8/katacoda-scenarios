@@ -7,7 +7,7 @@ cat <<EOM >requirements.yml
 - name: openshift-applier
     scm: git
     src: https://github.com/redhat-cop/openshift-applier
-    version: v2.0.0
+    version: v3.9.0
 EOM
 ```{{execute}}
 
@@ -22,7 +22,8 @@ Then start the run:
 If that is successful you should she:
 
 ```
-changed: 123432
-etc TODO: ADD THESE HERE
+PLAY RECAP ********************************************************************************************************************************
+application                : ok=17   changed=1    unreachable=0    failed=0
+bootstrap                  : ok=14   changed=1    unreachable=0    failed=0
 ```
 

@@ -27,7 +27,7 @@ echo 'BUILD_NAMESPACE=ruby-example' > params/ruby/build
 ```{{execute}}
 
 
-Let's verify the parameters and the template match up
+Let's verify the parameters and the template match up (THIS DOESN'T WORK BECAUSE DEVELOPER USER IN THE 
 
 ```
 oc process -f templates/app/ruby.yml --param-file params/ruby/build
