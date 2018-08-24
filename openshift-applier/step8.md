@@ -1,33 +1,12 @@
-Now that we see our Ruby app up and running, let's go push it up to GitHub so it can be transferred to our other cluster!
+Once the Ansible run completes, go over to the `Dashboard` tab in this environment. Login with the credentials: 
 
 ```
-git init
-```{{execute}}
-
-Name your branch uniquely, and put in your email and name info
-```
-git checkout -b your-branch-name
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
+user: developer
+pass: developer
 ```
 
-```
-git add .
-```{{execute}}
+You should see the `Ruby Example` project. Click on that and you should see the application you just deployed.
 
-Make a commit!
-```
-git commit -m "first commit"
-```
+Once the deployment is completed, you can go to the route url seen above the ruby-ex service and see the live application.
 
-Add the repo that we'll use to transfer your code
-```
-git remote add origin https://github.com/pcarney8/applier-lab.git
-```{{execute}}
-
-Now push your work up to a branch with your name on it
-```
-git push -u origin your-branch-name
-```
-
-And now let's watch it come up in the other cluster!
+Now let's push it across an Air Gap!
