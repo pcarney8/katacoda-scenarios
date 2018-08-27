@@ -8,8 +8,7 @@ echo "- object: ruby-components
       params: \"{{ inventory_dir }}/../params/ruby/build\"
       namespace: \"ruby-example\"
       tags:
-      - app"
->> inventory/group_vars/all.yml
+      - app" >> inventory/group_vars/all.yml
 ```{{execute}}
 
 Notice that we added the Project Request first, and the ruby template second.
