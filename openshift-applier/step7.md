@@ -15,7 +15,7 @@ First pull down the `openshift-applier` role from the ansible-galaxy requirement
 
 Finally, let's run it!
 
-``ansible-playbook -i inventory apply.yml``{{execute}}
+``ansible-playbook -i inventory/ apply.yml``{{execute}}
 
 If that is successful you should be:
 
