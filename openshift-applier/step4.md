@@ -1,7 +1,7 @@
 Now we also need to make sure our ruby template goes into our inventory as well:
 
 ```
-cat <<EOM >inventory/group_vars/all.yml
+cat >> inventory/group_vars/all.yml
 - object: ruby-components
     content:
     - name: ruby-ex
@@ -19,8 +19,7 @@ The `openshift-applier` creates [object in the order](https://github.com/redhat-
 
 Your `inventory/group_vars/all.yml` should now look like this:
 
-```
----
+```---
 ansible_connection: local
 
 openshift_cluster_content:
