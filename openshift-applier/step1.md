@@ -13,10 +13,7 @@ To complete the generic project structure, we want to create the rest of these:
 ├── inventory
 │   ├── group_vars
 │   │   └── all.yml
-│   ├── hosts
-│   └── host_vars
-│       ├── application.yml
-│       └── bootstrap.yml
+│   └── hosts
 ├── params
 │   ├── ruby
 │   └── projectrequests
@@ -29,11 +26,11 @@ To complete the generic project structure, we want to create the rest of these:
 Let's go ahead and create that structure:
 
 ```
-mkdir -p inventory/{group_vars,host_vars} params/{ruby,projectrequests} templates/app
+mkdir -p inventory/group_vars params/{ruby,projectrequests} templates/app
 ```{{execute}}
 
 And now the files:
 
 ``` 
-touch inventory/group_vars/all.yml inventory/host_vars/{application.yml,bootstrap.yml} inventory/hosts requirements.yml
+touch inventory/group_vars/all.yml inventory/hosts requirements.yml
 ```{{execute}}

@@ -1,6 +1,6 @@
 For this tutorial, we are going to use an existing Ruby OpenShift Template. 
 
-In many cases you may want your own custom template, but the process is the same.
+In many cases you may want your own custom template, but the process is the same. To learn more about OpenShift Templates, go [here](https://docs.openshift.com/container-platform/3.10/dev_guide/templates.html).
 
 First you'll need to find the name of the template you want to pull in:
 
@@ -24,12 +24,12 @@ To checkout what the template looks like, run the following:
 
 There are parameters that match up with the Template to then create a list of OpenShift objects
 
-Our `ruby-example-template` only has one parameter: `BUILD_NAMESPACE`. 
+Our `ruby-example-template` only has one parameter: `NAMESPACE_BUILD`. 
 
 Let's create a parameter file to set this value:
 
 ```
-echo 'BUILD_NAMESPACE=ruby-example' > params/ruby/build
+echo 'NAMESPACE_BUILD=ruby-example' > params/ruby/build
 ```{{execute}}
 
 In the next step we'll start populating the inventory.
