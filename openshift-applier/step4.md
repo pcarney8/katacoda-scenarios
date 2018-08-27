@@ -1,16 +1,14 @@
 Now we also need to make sure our ruby template goes into our inventory as well:
 
 ```
-cat >> inventory/group_vars/all.yml
-- object: ruby-components
-    content:
-    - name: ruby-ex
-      template: "{{ inventory_dir }}/../templates/app/ruby.yml"
-      params: "{{ inventory_dir }}/../params/ruby/build"
-      namespace: "ruby-example"
-      tags:
-      - app
-EOM
+echo "- object: ruby-components\\n
+    content:\\n
+    - name: ruby-ex\\n
+      template: \"{{ inventory_dir }}/../templates/app/ruby.yml\"\\n
+      params: \"{{ inventory_dir }}/../params/ruby/build\"\\n
+      namespace: \"ruby-example\"\\n
+      tags:\\n
+      - app\\n" >> inventory/group_vars/all.yml
 ```{{execute}}
 
 Notice that we added the Project Request first, and the ruby template second.
