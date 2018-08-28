@@ -7,6 +7,7 @@ echo "- object: ruby-components
       template: \"{{ inventory_dir }}/../templates/app/ruby.yml\"
       params: \"{{ inventory_dir }}/../params/ruby/build\"
       namespace: \"ruby-example\"
+      ignore_unknown_parameters: false
       tags:
       - app" >> inventory/group_vars/all.yml
 ```{{execute}}

@@ -24,6 +24,7 @@ openshift_cluster_content:
       template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"
       params: "{{ inventory_dir }}/../params/projectrequests/project"
       action: create
+      ignore_unknown_parameters: false
       tags:
       - projectrequests
       - projectrequests-dev

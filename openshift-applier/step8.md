@@ -21,7 +21,6 @@ If that is successful you should be:
 
 ```
 PLAY RECAP ***********************************
-application                : ok=17   changed=1
-bootstrap                  : ok=14   changed=1
+localhost                  : ok=29   changed=2
 ```
 
