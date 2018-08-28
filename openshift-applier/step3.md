@@ -1,7 +1,8 @@
 We also need to create a template for the Project. 
 
 ```
-echo "---
+cat <<EOM >templates/project/projectrequest-template.yml
+---
 apiVersion: v1
 kind: Template
 labels:
@@ -32,5 +33,6 @@ parameters:
   required: true
 - description: Description
   displayName: Description
-  name: NAMESPACE_DESCRIPTION" >> templates/project/projectrequest-template.yml
+  name: NAMESPACE_DESCRIPTION
+EOM
 ```{{execute}}
