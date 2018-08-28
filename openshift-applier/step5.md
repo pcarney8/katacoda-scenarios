@@ -38,4 +38,4 @@ openshift_cluster_content:
       namespace: "ruby-example"
       tags:
       - app
-```
+```{{copy}}

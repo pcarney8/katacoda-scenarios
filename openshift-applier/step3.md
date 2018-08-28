@@ -33,4 +33,4 @@ parameters:
 - description: Description
   displayName: Description
   name: NAMESPACE_DESCRIPTION" >> templates/project/projectrequest-template.yml
-```
+```{{execute}}
