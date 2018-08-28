@@ -1,10 +1,16 @@
-To combine a template with a parameters file, we typically use the `oc process` command. But this does not put the output into OpenShift, it only validates that your template and params are correct and shows you the output.
+To combine a template with a parameters file, we use the `oc process` command. 
+
+```
+oc process --local -f templates/app/ruby.yml --param-file params/ruby/build
+```{{execute}}
+
+This does not put the output into OpenShift, it only validates that your template and params are correct and shows you the output.
 
 If everything looks good, and you want to create put it into OpenShift, your command would look like this: `oc process -f templates/app/ruby.yml --param-file params/ruby/build | oc apply -f -`
 
 This is a powerful command that will ensure your template and all of it's piece have been created in OpenShift, and is precisely what the `openshift-applier` role allows you to do using Ansible.
 
-Now, to get our current template to work with the `openshift-applier` we need to create the `openshift_cluster_content` to tell it which templates and parameters to use.
+Now, to execute that same command using the `openshift-applier` we need to create `openshift_cluster_content` to tell it which templates and parameters to use.
 
 ```
 cat <<EOM >inventory/group_vars/all.yml
@@ -24,7 +30,7 @@ openshift_cluster_content:
 EOM
 ```{{execute}}
 
-The `openshift-applier` can pull templates down from raw GitHub URLs in addition to using local files!
+The `openshift-applier` can also pull templates down from raw GitHub URLs in addition to using local files!
 
 To learn more about the `openshift_cluster_content` object, go [here](https://github.com/redhat-cop/openshift-applier/blob/v2.0.0/roles/openshift-applier/README.md)!
 

@@ -8,9 +8,9 @@ First you'll need to find the name of the template you want to pull in:
 
 You should see the following output:
 ```
-NAME                    DESCRIPTION   PARAMETERS    OBJECTS
-ruby-example-template                 1 (1 blank)   6
-projectrequest-template               3 (2 blank)   1
+NAME                      DESCRIPTION               PARAMETERS    OBJECTS
+projectrequest-template   ProjectRequest Template   3 (3 blank)   1
+ruby-example-template                               1 (1 blank)   6
 ```
 
 `ruby-example-template` is the name of the template we're going to pull down as a template file into the `templates` directory.

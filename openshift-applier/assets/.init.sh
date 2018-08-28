@@ -1,4 +1,4 @@
-echo 'Prepping environment'
+echo 'Preparing environment'
 while ! [ -x "$(command -v ansible)" ]
 do
   echo 'Waiting...' >&2
