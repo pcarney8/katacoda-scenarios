@@ -1,38 +1,19 @@
-We also need to create a template for the Project. 
+There are parameters that match up with each Template to then create a list of OpenShift objects
+
+Our `ruby-example-template` only has one parameter: `NAMESPACE_BUILD`. 
+
+Let's create a parameter file to set this value:
 
 ```
-cat <<EOM >templates/project/projectrequest-template.yml
----
-apiVersion: v1
-kind: Template
-labels:
-  template: projectrequest-template
-message: |-
-  The following project/namespace has been created: ${NAMESPACE}
-metadata:
-  annotations:
-    description: |-
-      ProjectRequest Template
-  creationTimestamp: null
-  name: ${NAMESPACE}
-objects:
-- apiVersion: v1
-  kind: ProjectRequest
-  metadata:
-    name: ${NAMESPACE}
-  description: '${NAMESPACE_DESCRIPTION}' 
-  displayName: '${NAMESPACE_DISPLAY_NAME}'
-parameters:
-- description: Name
-  displayName: Name
-  name: NAMESPACE
-  required: true
-- description: DisplayName
-  displayName: DisplayName
-  name: NAMESPACE_DISPLAY_NAME
-  required: true
-- description: Description
-  displayName: Description
-  name: NAMESPACE_DESCRIPTION
+echo 'NAMESPACE_BUILD=ruby-example' > params/ruby/build
+```{{execute}}
+
+
+Now we'll create the parameters for the Project template:
+
+```
+cat <<EOM >params/projectrequests/project
+NAMESPACE=ruby-example
+NAMESPACE_DISPLAY_NAME="Ruby Example"
 EOM
 ```{{execute}}

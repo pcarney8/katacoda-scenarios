@@ -24,18 +24,7 @@ openshift_cluster_content:
 EOM
 ```{{execute}}
 
-Notice that this template is coming from a [URL](https://github.com/redhat-cop/openshift-applier/blob/v2.0.0/roles/openshift-applier/README.md)!
+The `openshift-applier` can pull templates down from raw GitHub URLs in addition to using local files!
 
-The `openshift-applier` can pull templates down from raw GitHub URLs in addition to using local files! We'll see an example of the latter in the next step.
-
-Now we'll create the parameters for this template:
-
-```
-cat <<EOM >params/projectrequests/project
-NAMESPACE=ruby-example
-NAMESPACE_DISPLAY_NAME="Ruby Example"
-EOM
-```{{execute}}
-
-To learn more about the `openshift_cluster_content` object, go [here](https://github.com/redhat-cop/openshift-applier/blob/master/roles/openshift-applier/README.md)!
+To learn more about the `openshift_cluster_content` object, go [here](https://github.com/redhat-cop/openshift-applier/blob/v2.0.0/roles/openshift-applier/README.md)!
 

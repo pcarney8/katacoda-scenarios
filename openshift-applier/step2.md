@@ -10,26 +10,22 @@ You should see the following output:
 ```
 NAME                    DESCRIPTION   PARAMETERS    OBJECTS
 ruby-example-template                 1 (1 blank)   6
+projectrequest-template               3 (2 blank)   1
 ```
 
 `ruby-example-template` is the name of the template we're going to pull down as a template file into the `templates` directory.
+`projectrequest-template` is the name of the template we're going to use to create the project in which our Ruby App will run.
 
+First let's get the Ruby Template
 ```
 oc export template ruby-example-template -n openshift -o yaml > templates/app/ruby.yml
 ```{{execute}}
 
-To checkout what the template looks like, run the following:
-
-``cat templates/app/ruby.yml``{{execute}}
-
-There are parameters that match up with the Template to then create a list of OpenShift objects
-
-Our `ruby-example-template` only has one parameter: `NAMESPACE_BUILD`. 
-
-Let's create a parameter file to set this value:
-
+And now the Project Template
 ```
-echo 'NAMESPACE_BUILD=ruby-example' > params/ruby/build
+oc export template projectrequest-template -n openshift -o yaml > templates/project/projectrequest-template.yml
 ```{{execute}}
 
-In the next step we'll start populating the inventory.
+To checkout what the Ruby template looks like, run the following:
+
+``cat templates/app/ruby.yml``{{execute}}
