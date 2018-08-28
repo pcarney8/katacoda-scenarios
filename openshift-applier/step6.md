@@ -1,14 +1,12 @@
-Before we can run this, we need to create a playbook which will call the `openshift-applier`.
+To finish up the inventory, we need to update the hosts file
+
+Because the `openshift-applier` uses your local `oc` client, it will target `localhost` when we run.
 
 ```
-cat <<EOM >apply.yml
----
-- name: Create Project and Ruby Example 
-    hosts: "seed-hosts"
-    tasks:
-      - include_role:
-          name: openshift-applier/roles/openshift-applier
+cat <<EOM >inventory/hosts
+[seed-hosts]
+localhost ansible_connection=local
 EOM
-```{{execute}} 
+```{{execute}}
 
-Next, we'll pull in the `openshift-applier` role using `ansible-galaxy`!
+In the next step we'll create the playbook!

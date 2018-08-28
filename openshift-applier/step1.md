@@ -20,13 +20,14 @@ To complete the generic project structure, we want to create the rest of these:
 ├── projectrequests
 ├── requirements.yml
 └── templates
-    └── apps
+    ├── app
+    └── project
 ```
 
 Let's go ahead and create that structure:
 
 ```
-mkdir -p inventory/group_vars params/{ruby,projectrequests} templates/app
+mkdir -p inventory/group_vars params/{ruby,projectrequests} templates/{app,project}
 ```{{execute}}
 
 And now the files:

@@ -1,27 +1,14 @@
-Now we need the our [openshift-applier](https://github.com/redhat-cop/openshift-applier) role from GitHub, let's create the `requirements.yml` file
+Before we can run this, we need to create a playbook which will call the `openshift-applier`.
 
 ```
-cat <<EOM >requirements.yml
-- name: openshift-applier
-    scm: git
-    src: https://github.com/redhat-cop/openshift-applier
-    version: v2.0.0
+cat <<EOM >apply.yml
+---
+- name: Create Project and Ruby Example 
+    hosts: "seed-hosts"
+    tasks:
+      - include_role:
+          name: openshift-applier/roles/openshift-applier
 EOM
-```{{execute}}
+```{{execute}} 
 
-First pull down the `openshift-applier` role from the ansible-galaxy requirements into the `roles` directory:
-
-``ansible-galaxy install -r requirements.yml -p roles``{{execute}}
-
-Finally, let's run it!
-
-``ansible-playbook -i inventory/ apply.yml``{{execute}}
-
-If that is successful you should be:
-
-```
-PLAY RECAP ***********************************
-application                : ok=17   changed=1
-bootstrap                  : ok=14   changed=1
-```
-
+Next, we'll pull in the `openshift-applier` role using `ansible-galaxy`!

@@ -1,14 +1,27 @@
-Once the Ansible run completes, go over to the `Dashboard` tab in this environment
-
-Login with the credentials: 
+Now we need the our [openshift-applier](https://github.com/redhat-cop/openshift-applier) role from GitHub, let's create the `requirements.yml` file
 
 ```
-user: developer
-pass: developer
+cat <<EOM >requirements.yml
+- name: openshift-applier
+    scm: git
+    src: https://github.com/redhat-cop/openshift-applier
+    version: v2.0.0
+EOM
+```{{execute}}
+
+First pull down the `openshift-applier` role from the ansible-galaxy requirements into the `roles` directory:
+
+``ansible-galaxy install -r requirements.yml -p roles``{{execute}}
+
+Finally, let's run it!
+
+``ansible-playbook -i inventory/ apply.yml``{{execute}}
+
+If that is successful you should be:
+
+```
+PLAY RECAP ***********************************
+application                : ok=17   changed=1
+bootstrap                  : ok=14   changed=1
 ```
 
-You should see the `Ruby Example` project. Click on that and you should see the application you just deployed.
-
-Once the deployment is completed, you can go to the route url seen above the ruby-ex service and see the live application.
-
-Now let's push it across our Air Gap!

@@ -1,22 +1,13 @@
-Now we also need to make sure our ruby template goes into our inventory as well:
+To combine a template with a parameters file, we typically use the `oc process` command. But this does not put the output into OpenShift, it only validates that your template and params are correct and shows you the output.
+
+If everything looks good, and you want to create put it into OpenShift, your command would look like this: `oc process -f templates/app/ruby.yml --param-file params/ruby/build | oc apply -f -`
+
+This is a powerful command that will ensure your template and all of it's piece have been created in OpenShift, and is precisely what the `openshift-applier` role allows you to do using Ansible.
+
+Now, to get our current template to work with the `openshift-applier` we need to create the `openshift_cluster_content` to tell it which templates and parameters to use.
 
 ```
-echo "- object: ruby-components
-    content:
-    - name: ruby-ex
-      template: \"{{ inventory_dir }}/../templates/app/ruby.yml\"
-      params: \"{{ inventory_dir }}/../params/ruby/build\"
-      namespace: \"ruby-example\"
-      tags:
-      - app" >> inventory/group_vars/all.yml
-```{{execute}}
-
-Notice that we added the Project Request first, and the ruby template second.
-
-The `openshift-applier` creates [object in the order](https://github.com/redhat-cop/openshift-applier/blob/master/roles/openshift-applier/README.md#ordering-of-objects-in-the-inventory) that they are placed, so we must make sure to create the Project first, and then the objects inside of that project!
-
-Your `inventory/group_vars/all.yml` should now look like this:
-```
+cat <<EOM >inventory/group_vars/all.yml
 ---
 ansible_connection: local
 
@@ -24,18 +15,27 @@ openshift_cluster_content:
 - object: projects
     content:
     - name: dev
-      template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
-      action: create
+      template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"
       params: "{{ inventory_dir }}/../params/projectrequests/project"
+      action: create
       tags:
       - projectrequests
       - projectrequests-dev
-- object: ruby-components
-    content:
-    - name: ruby-ex
-      template: "{{ inventory_dir }}/../templates/app/ruby.yml"
-      params: "{{ inventory_dir }}/../params/ruby/build"
-      namespace: "ruby-example"
-      tags:
-      - app
+EOM
+```{{execute}}
+
+Notice that this template is coming from a [URL](https://github.com/redhat-cop/openshift-applier/blob/v2.0.0/roles/openshift-applier/README.md)!
+
+The `openshift-applier` can pull templates down from raw GitHub URLs in addition to using local files! We'll see an example of the latter in the next step.
+
+Now we'll create the parameters for this template:
+
 ```
+cat <<EOM >params/projectrequests/project
+NAMESPACE=ruby-example
+NAMESPACE_DISPLAY_NAME="Ruby Example"
+EOM
+```{{execute}}
+
+To learn more about the `openshift_cluster_content` object, go [here](https://github.com/redhat-cop/openshift-applier/blob/master/roles/openshift-applier/README.md)!
+
