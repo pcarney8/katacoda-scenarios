@@ -19,7 +19,7 @@ The `openshift-applier` creates [object in the order](https://github.com/redhat-
 Your `inventory/group_vars/all.yml` should now look like this:
 
 ```
-\---
+---
 ansible_connection: local
 
 openshift_cluster_content:
@@ -40,4 +40,4 @@ openshift_cluster_content:
     namespace: "ruby-example"
     tags:
       - app
-```
+```{{}}
