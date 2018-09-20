@@ -19,13 +19,13 @@ ansible_connection: local
 
 openshift_cluster_content:
 - object: projects
-    content:
-    - name: dev
-      template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"
-      params: "{{ inventory_dir }}/../params/projectrequests/project"
-      action: create
-      ignore_unknown_parameters: false
-      tags:
+  content:
+  - name: dev
+    template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"
+    params: "{{ inventory_dir }}/../params/projectrequests/project"
+    action: create
+    ignore_unknown_parameters: false
+    tags:
       - projectrequests
       - projectrequests-dev
 EOM
