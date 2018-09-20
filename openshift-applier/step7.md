@@ -4,10 +4,10 @@ Before we can run this, we need to create a playbook which will call the `opensh
 cat <<EOM >apply.yml
 ---
 - name: Create Project and Ruby Example 
-    hosts: "seed-hosts"
-    tasks:
-      - include_role:
-          name: openshift-applier/roles/openshift-applier
+  hosts: "seed-hosts"
+  tasks:
+    - include_role:
+        name: openshift-applier/roles/openshift-applier
 EOM
 ```{{execute}} 
 

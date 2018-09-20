@@ -3,9 +3,9 @@ Now we need the our [openshift-applier](https://github.com/redhat-cop/openshift-
 ```
 cat <<EOM >requirements.yml
 - name: openshift-applier
-    scm: git
-    src: https://github.com/redhat-cop/openshift-applier
-    version: v2.0.1
+  scm: git
+  src: https://github.com/redhat-cop/openshift-applier
+  version: v2.0.2
 EOM
 ```{{execute}}
 

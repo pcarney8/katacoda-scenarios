@@ -2,13 +2,13 @@ Now we also need to make sure our ruby template goes into our inventory as well:
 
 ```
 echo "- object: ruby-components
-    content:
-    - name: ruby-ex
-      template: \"{{ inventory_dir }}/../templates/app/ruby.yml\"
-      params: \"{{ inventory_dir }}/../params/ruby/build\"
-      namespace: \"ruby-example\"
-      ignore_unknown_parameters: false
-      tags:
+  content:
+  - name: ruby-ex
+    template: \"{{ inventory_dir }}/../templates/app/ruby.yml\"
+    params: \"{{ inventory_dir }}/../params/ruby/build\"
+    namespace: \"ruby-example\"
+    ignore_unknown_parameters: false
+    tags:
       - app" >> inventory/group_vars/all.yml
 ```{{execute}}
 
@@ -23,20 +23,20 @@ ansible_connection: local
 
 openshift_cluster_content:
 - object: projects
-    content:
-    - name: dev
-      template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
-      action: create
-      params: "{{ inventory_dir }}/../params/projectrequests/project"
-      tags:
+  content:
+  - name: dev
+    template: "https://raw.githubusercontent.com/redhat-cop/cluster-lifecycle/master/files/projectrequest/template.yml"
+    action: create
+    params: "{{ inventory_dir }}/../params/projectrequests/project"
+    tags:
       - projectrequests
       - projectrequests-dev
 - object: ruby-components
-    content:
-    - name: ruby-ex
-      template: "{{ inventory_dir }}/../templates/app/ruby.yml"
-      params: "{{ inventory_dir }}/../params/ruby/build"
-      namespace: "ruby-example"
-      tags:
+  content:
+  - name: ruby-ex
+    template: "{{ inventory_dir }}/../templates/app/ruby.yml"
+    params: "{{ inventory_dir }}/../params/ruby/build"
+    namespace: "ruby-example"
+    tags:
       - app
 ```{{copy}}
