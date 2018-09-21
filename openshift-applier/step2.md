@@ -21,7 +21,7 @@ First let's get the Ruby Template
 oc export template ruby-example-template -n openshift -o yaml > templates/app/ruby.yml
 ```{{execute}}
 
-And now the Project Template
+And now get the Project Template
 ```
 oc export template projectrequest-template -n openshift -o yaml > templates/project/projectrequest-template.yml
 ```{{execute}}
