@@ -6,9 +6,9 @@ oc process --local -f templates/app/ruby.yml --param-file params/ruby/build
 
 This does not put the output into OpenShift, it only validates that your template and params are correct and shows you the output.
 
-If everything looks good, and you want to create put it into OpenShift, your command would look like this: `oc process -f templates/app/ruby.yml --param-file params/ruby/build | oc apply -f -`
+If everything looks good, and you want to put it into OpenShift, your command would look like this: `oc process -f templates/app/ruby.yml --param-file params/ruby/build | oc apply -f -` (THIS IS AN EXAMPLE, DO NOT RUN)
 
-This is a powerful command that will ensure your template and all of it's piece have been created in OpenShift, and is precisely what the `openshift-applier` role allows you to do using Ansible.
+This is a powerful command that will ensure your template and all of it's pieces have been created in OpenShift. And this is precisely what the `openshift-applier` role allows you to do using Ansible!
 
 Now, to execute that same command using the `openshift-applier` we need to create `openshift_cluster_content` to tell it which templates and parameters to use.
 
