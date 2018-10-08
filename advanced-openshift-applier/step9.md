@@ -1,14 +1,22 @@
-Once the Ansible run completes, go over to the `Dashboard` tab in this environment
-
-Login with the credentials: 
-
+Let's change your `inventory/group_vars/all.yml` file:
 ```
-user: developer
-pass: developer
+- object: ruby-components
+  content:
+  - name: ruby-ex
+    template: "{{ inventory_dir }}/../templates/app/ruby.yml"
+    params: "{{ inventory_dir }}/../params/ruby/build"
+    params_from_vars: "{{ ruby_vars }}"
+    namespace: "ruby-example"
+    tags:
+      - app
+```{{}}
+
+Notice that we changed this part:
 ```
+    params_from_vars: "{{ ruby_vars }}"
+```{{}}
 
-You should see the `Ruby Example` project. Click on that and you should see the application you just deployed.
+Run the applier again!
+``ansible-playbook -i inventory/ apply.yml``{{execute}}
 
-Once the deployment is completed, you can go to the route url seen above the ruby-ex service and see the live application.
-
-Now let's push it across our Air Gap!
+It failed again! Why?

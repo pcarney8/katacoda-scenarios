@@ -1,26 +1,11 @@
-Now we need the our [openshift-applier](https://github.com/redhat-cop/openshift-applier) role from GitHub, let's create the `requirements.yml` file
+Because the `params_from_vars` variable overwrote the `params` file variable, and the `NAMESPACE_BUILD: not-a-ruby-example` is not the correct namespace!
 
-```
-cat <<EOM >requirements.yml
-- name: openshift-applier
-  scm: git
-  src: https://github.com/redhat-cop/openshift-applier
-  version: v2.0.3
-EOM
-```{{execute}}
+The easy way to fix this would be to change this:
 
-First pull down the `openshift-applier` role from the ansible-galaxy requirements into the `roles` directory:
+`NAMESPACE_BUILD: not-a-ruby-example` 
 
-``ansible-galaxy install -r requirements.yml -p roles``{{execute}}
+to this:
 
-Finally, let's run it!
+`NAMESPACE_BUILD: ruby-example`
 
-``ansible-playbook -i inventory/ apply.yml``{{execute}}
-
-If that is successful you should be:
-
-```
-PLAY RECAP ***********************************
-localhost                  : ok=29   changed=2
-```
-
+But let's fix our inventory using dynamic variables in a different way...
