@@ -1,6 +1,6 @@
 {
     "icon": "fa-openshift",
-    "title": "Introduction to OpenShift-Applier",
+    "title": "Advanced OpenShift-Applier with Dynamic Variables",
     "description": "Using the Ansible openshift-applier role to implement the Infrastructure-as-Code paradigm",
     "difficulty": "Intermediate",
     "time": "20-30 minutes",
