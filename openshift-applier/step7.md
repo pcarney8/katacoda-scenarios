@@ -1,4 +1,4 @@
-Before we can run this, we need to create a playbook which will call the `openshift-applier`.
+## Before we can run this, we need to create a playbook which will call the `openshift-applier`.
 
 ```
 cat <<EOM >apply.yml

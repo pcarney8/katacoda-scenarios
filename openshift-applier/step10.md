@@ -1,4 +1,4 @@
-Now that we see our Ruby app up and running, let's go push it up to GitHub so it can be transferred to our other cluster!
+## Now that we see our Ruby app up and running, let's go push it up to GitHub so it can be transferred to our other cluster!
 
 ```
 git init

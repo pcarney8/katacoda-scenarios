@@ -6,7 +6,9 @@ If you remember from the first tutorial, if we combine a template with a paramet
 oc process --local -f templates/app/ruby.yml --param-file params/ruby/build
 ```{{execute}}
 
-From there we put the template and the static parameter file together, and it looked like this:
+Failed! Uh oh... that's because we're not using a static `params` file this time!
+
+To use the static `params` file, and it looked like this:
 ```
 openshift_cluster_content:
 - object: projects
@@ -21,15 +23,14 @@ openshift_cluster_content:
       - projectrequests-dev
 ```{{}}
 
-Take note of:
+Take note of how it points to a file:
 ```
      template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"
      params: "{{ inventory_dir }}/../params/projectrequests/project"
 ```{{}}
 
-And how it points to a file
 
-Now, let's go ahead and make it dynamic! 
+## Now, let's go ahead and make it dynamic! 
 
 Run this command to create our group_vars file:
 
@@ -53,7 +54,7 @@ openshift_cluster_content:
 EOM
 ```{{execute}}
 
-### You should notice that our static `params` file has become:
+You should notice that our static `params` file has become:
 
 ```
     template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"

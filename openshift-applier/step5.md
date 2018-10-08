@@ -1,4 +1,4 @@
-Now we also need to make sure our ruby template goes into our inventory as well:
+## Now we also need to make sure our ruby template goes into our inventory as well:
 
 ```
 echo "- object: ruby-components

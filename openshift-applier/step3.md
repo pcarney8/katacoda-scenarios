@@ -1,4 +1,4 @@
-There are parameters that match up with each Template to then create a list of OpenShift objects
+## There are parameters that match up with each Template to then create a list of OpenShift objects
 
 Our `ruby-example-template` only has one parameter: `NAMESPACE_BUILD`. 
 

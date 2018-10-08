@@ -1,4 +1,4 @@
-For this tutorial, we are going to use an existing Ruby OpenShift Template. 
+## For this tutorial, we are going to use an existing Ruby OpenShift Template. 
 
 In many cases you may want your own custom template, but the process is the same. To learn more about OpenShift Templates, go [here](https://docs.openshift.com/container-platform/3.10/dev_guide/templates.html).
 

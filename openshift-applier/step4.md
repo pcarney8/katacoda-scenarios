@@ -1,4 +1,4 @@
-To combine a template with a parameters file, we use the `oc process` command. 
+## To combine a template with a parameters file, we use the `oc process` command. 
 
 ```
 oc process --local -f templates/app/ruby.yml --param-file params/ruby/build

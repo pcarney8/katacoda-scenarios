@@ -42,3 +42,5 @@ openshift_cluster_content:
 
 Run it one last time!
 ``ansible-playbook -i inventory/ apply.yml``{{execute}}
+
+Don't forget to check out your app running in the console!

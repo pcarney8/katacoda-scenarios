@@ -1,4 +1,4 @@
-To finish up the inventory, we need to update the hosts file
+## To finish up the inventory, we need to update the hosts file
 
 Because the `openshift-applier` uses your local `oc` client, it will target `localhost` when we run.
 
