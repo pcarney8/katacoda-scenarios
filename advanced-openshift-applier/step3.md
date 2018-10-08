@@ -53,7 +53,7 @@ openshift_cluster_content:
 EOM
 ```{{execute}}
 
-You should notice that our static `params` file has become:
+### You should notice that our static `params` file has become:
 
 ```
     template: "{{ inventory_dir }}/../templates/project/projectrequest-template.yml"

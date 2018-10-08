@@ -1,4 +1,4 @@
-If you took [this](https://katacoda.com/patrickcarney/scenarios/openshift-applier) tutorial, then this first step should look familiar!
+## If you took [this](https://katacoda.com/patrickcarney/scenarios/openshift-applier) tutorial, then the first two steps should look familiar!
 
 To get started, let us login to the OpenShift cluster by running the following:
 

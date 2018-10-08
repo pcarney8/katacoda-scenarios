@@ -1,4 +1,4 @@
-Let's quickly setup everything to run the applier with the new dynamic params!
+## Let's quickly setup everything to run the applier with the new dynamic params!
 
 First the `hosts` file:
 
@@ -44,7 +44,7 @@ If that is successful you should be:
 
 ```
 PLAY RECAP ***********************************
-localhost                  : ok=29   changed=2
+localhost                  : ok=18   changed=2
 ```
 
 NOTE: if you need a refresher on what we're doing in this step, please refer to [here](https://katacoda.com/patrickcarney/scenarios/openshift-applier)

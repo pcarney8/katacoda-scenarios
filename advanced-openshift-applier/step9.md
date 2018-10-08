@@ -1,4 +1,5 @@
-Let's change your `inventory/group_vars/all.yml` file:
+## Let's change your `inventory/group_vars/all.yml` file:
+
 ```
 - object: ruby-components
   content:

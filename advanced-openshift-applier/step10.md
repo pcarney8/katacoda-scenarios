@@ -1,4 +1,4 @@
-Because we haven't defined the variable `ruby_vars` yet!
+## Because we haven't defined the variable `ruby_vars` yet!
 
 Edit your `inventory/group_vars/all.yml` file and add this above `openshift_cluster_content`:
 

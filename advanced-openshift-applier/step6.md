@@ -1,4 +1,4 @@
-Now we also need to make sure our ruby template goes into our inventory as well:
+## Now we also need to make sure our ruby template goes into our inventory as well:
 
 ```
 echo "- object: ruby-components
@@ -23,6 +23,8 @@ Notice there are both `params` and `params_from_vars`:
 The `openshift-applier` will enumerate both the `params` file and the `params_from_vars` onto the command!
 
 It will look like this:
-`oc process -f ruby.yml --param NAMESPACE_BUILD=ruby-example --param-file ruby.yml | oc apply -f -`
+```
+oc process  --local  -f /root/sample-applier/inventory/../templates/app/ruby.yml -n ruby-example  --param='NAMESPACE_BUILD=not-a-ruby-example'  --param-file=/root/sample-applier/params/ruby/build  | oc apply -n ruby-example -f -
+```{{}}
 
 Anything that is `--param` will overwrite a matching key found in the params file specified using `--param-file`!
