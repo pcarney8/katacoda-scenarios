@@ -13,20 +13,18 @@ To complete the generic project structure, we want to create the rest of these:
 ```
 .
 ├── inventory
-│   ├── group_vars
-│   │   └── all.yml
-│   └── hosts
-├── encrypted-secrets.yml
-├── projectrequests
+│   ├── group_vars
+│   │   └── all.yml
+│   └── hosts
 ├── requirements.yml
 └── templates
-    └── secrets
+    └── secrets
 ```
 
 Let's go ahead and create that structure:
 
 ```
-mkdir -p inventory/group_vars params/{userpass,sshkey} templates/secrets
+mkdir -p inventory/group_vars templates/secrets
 ```{{execute}}
 
 And now the files:

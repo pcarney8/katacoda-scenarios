@@ -28,7 +28,7 @@ Notice the `encrypted_username` and `encrypted_password` variables!
 
 Ansible will automatically decrypt these variables when we run the applier and put them into the template!
 
-## Since we aren't creating a project with the applier in this inventory, let's go ahead and manually create one:
+Since we aren't creating a project with the applier in this inventory, let's go ahead and manually create one:
 
 ```
 oc new-project concentrated-dark-matter-secret

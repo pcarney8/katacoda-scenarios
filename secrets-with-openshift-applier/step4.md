@@ -2,7 +2,7 @@
 
 In our `secret-user-pass-template.yml` we have a couple of parameters: `USERNAME` and `PASSWORD`, so let's encrypt both values! 
 ```
-echo "rickSanchez01" | ansible-vault encrypt_string --stdin-name 'encrypted_username' >> encrypted-secrets.yml`
+echo "rickSanchez01" | ansible-vault encrypt_string --stdin-name 'encrypted_username' >> encrypted-secrets.yml
 ```{{execute}}
 
 There's a couple things to note here:
@@ -13,7 +13,7 @@ There's a couple things to note here:
 
 Now let's encrypt the password and add it to the same file
 ```
-echo "m0rtyIsTheB3st!" | ansible-vault encrypt_string --stdin-name 'encrypted_username' >> encrypted-secrets.yml
+echo "m0rtyIsTheB3st" | ansible-vault encrypt_string --stdin-name 'encrypted_password' >> encrypted-secrets.yml
 ```{{execute}}
 
 Have a look at what was created using:
