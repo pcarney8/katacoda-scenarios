@@ -4,9 +4,9 @@
 
 You should see the following output:
 ```
-NAME                      DESCRIPTION               PARAMETERS    OBJECTS
-secret-user-pass-template                           3 (3 blank)   1
-secret-ssh-private-key-template                     2 (2 blank)   1
+NAME                              DESCRIPTION        PARAMETERS    OBJECTS
+secret-ssh-private-key-template   Secret template.   2 (2 blank)   1
+secret-user-pass-template         Secret template.   3 (3 blank)   1
 ```
 
 First let's get the Secret Template for Username & Password!

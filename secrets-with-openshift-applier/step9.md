@@ -1,24 +1,9 @@
-## Username and Password are great, but let's encrypt a ssh private key!
+## Once again, go over to the `Dashboard` tab in this environment 
 
-Let's update the `group_vars/all.yml` to look like:
+You should see both of your secrets under Resources -> Secrets!
 
-```
-- object: ssh-private-key
-  content:
-  - name: ssh-private-key
-    template: "{{ inventory_dir }}/../templates/secrets/secret-ssh-private-key-template.yml"
-    params_from_vars:
-      SECRET_NAME: ricks-private-ssh-key
-      SSH_PRIVATE_KEY: {{ ssh_private_key | b64encode }}
-    namespace: "concentrated-dark-matter-secret\
-    tags:
-      - ssh-private-key
-```{{copy}}
+And that's it! You've kept your secrets securely encrypted at rest on your machine (and in your git repository) using AES 256, one of the most secure ways to encrypt your data!
 
-Notice the ` | b64encode }}` 
+Don't believe it? Check out this fun fact in Table 1 [here](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-203.pdf)! 
 
-The ansible filter will encode it for us! No need to change your encrypted ssh-key! 
-
-And we'll run it once more:
-``ansible-playbook -i inventory/ apply.yml``{{execute}} 
-
+The impact of quantum computing on AES is simply that larger keys will be needed, while RSA, ECDSA, and DSA will no longer be secure!
