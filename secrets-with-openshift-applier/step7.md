@@ -1,4 +1,4 @@
-## Username and Password are great, but let's encrypt a ssh private key!
+## Let's fix this issue by base64 encoding the two variables
 
 Let's update the `group_vars/all.yml` to look like:
 
