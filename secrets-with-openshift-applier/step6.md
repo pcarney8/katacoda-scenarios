@@ -15,7 +15,7 @@ and the playbook just like last time:
 ```
 cat <<EOM >apply.yml
 ---
-- name: Create Project and Ruby Example 
+- name: Create Project and Secret Example 
   hosts: "seed-hosts"
   tasks:
     - include_vars: "{{ inventory_dir }}/../encrypted-secrets.yml"
